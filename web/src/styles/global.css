@@ -1,0 +1,81 @@
+/*
+ * Глобальные стили.
+ * Шрифт Nunito подключается локально через public/fonts.css (линк в index.html),
+ * файлы .woff2 — в public/fonts. Пока файлов нет, браузер молча берёт системный
+ * шрифт из списка fallback ниже. Внешних запросов не происходит.
+ */
+
+/* --- Базовые стили --- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Nunito',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    system-ui,
+    sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+/* Настоящие кнопки наследуют шрифт и не имеют лишних рамок */
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+/* Видимый фокус для клавиатурной навигации */
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Убираем стандартную обводку там, где есть :focus-visible */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Уважаем системную настройку «меньше движения» */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
