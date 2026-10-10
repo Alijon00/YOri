@@ -1,13 +1,10 @@
 # Шрифты (локальные, без интернета)
 
-Сюда кладутся файлы Nunito в формате `.woff2`. Пока папка /reference
-отсутствует, файлов нет — браузер молча использует системный шрифт.
+Файлы Nunito (`.woff2`) скопированы из `reference/fonts`. Подключение —
+через `@font-face` в `web/public/fonts.css` (линк в `index.html`).
 
-Ожидаемые имена (см. @font-face в `src/styles/global.css`):
+Веса 500 / 700 / 800, подмножества latin / cyrillic / cyrillic-ext:
 
-- Nunito-500-latin.woff2, Nunito-500-cyrillic.woff2, Nunito-500-cyrillic-ext.woff2
-- Nunito-700-latin.woff2, Nunito-700-cyrillic.woff2, Nunito-700-cyrillic-ext.woff2
-- Nunito-800-latin.woff2, Nunito-800-cyrillic.woff2, Nunito-800-cyrillic-ext.woff2
-
-Когда появится `reference/fonts/*.woff2` — скопировать файлы сюда
-под указанными именами (или поправить пути в global.css).
+- nunito-latin-500-normal.woff2, nunito-cyrillic-500-normal.woff2, nunito-cyrillic-ext-500-normal.woff2
+- nunito-latin-700-normal.woff2, nunito-cyrillic-700-normal.woff2, nunito-cyrillic-ext-700-normal.woff2
+- nunito-latin-800-normal.woff2, nunito-cyrillic-800-normal.woff2, nunito-cyrillic-ext-800-normal.woff2

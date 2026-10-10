@@ -1,9 +1,9 @@
 # Иконки (локальные, без интернета)
 
-Сюда копируются иконки из `reference/icons/*`, когда прототип появится.
+Скопированы из `reference/icons`. Подключены в `index.html`:
 
-Используется в `index.html`:
+- `icon-192.png` — favicon (`<link rel="icon">`).
+- `apple-touch-icon.png` — иконка для домашнего экрана iOS.
 
-- `apple-touch-icon.png` — иконка для добавления на домашний экран iOS (180×180).
-
-Фавикон вынесен отдельно: `web/public/favicon.svg` (временная заглушка).
+Также есть `icon-512.png` и `icon-maskable-512.png` — для будущего
+PWA-манифеста (шаг с manifest.webmanifest ещё не делался).

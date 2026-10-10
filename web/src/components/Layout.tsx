@@ -1,13 +1,11 @@
-import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { useLang, useT } from '../i18n/LangProvider';
+import { ui } from '../content/ui';
 import styles from './Layout.module.css';
 
-// Доступные языки интерфейса. Реальная локализация появится позже —
-// пока переключатель только меняет визуальное состояние.
-type Lang = 'tg' | 'ru';
-
 export function Layout(): React.JSX.Element {
-  const [lang, setLang] = useState<Lang>('ru');
+  const { lang, setLang } = useLang();
+  const t = useT();
 
   return (
     <div className={styles.app}>
@@ -20,14 +18,14 @@ export function Layout(): React.JSX.Element {
         <div className={styles.actions}>
           {/* Озвучка. Пока заглушка — будет читать текст вслух. */}
           <button type="button" className={styles.listen}>
-            <span aria-hidden="true">🔊</span> Слушать
+            <span aria-hidden="true">🔊</span> {t(ui.listen)}
           </button>
 
           {/* Переключатель языка. aria-pressed показывает активный язык. */}
           <div
             className={styles.langToggle}
             role="group"
-            aria-label="Выбор языка"
+            aria-label="Язык / Забон"
           >
             <button
               type="button"
