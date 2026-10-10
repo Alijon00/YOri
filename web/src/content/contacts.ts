@@ -1,5 +1,6 @@
 import type { ContactsContent } from './types';
 import { ui } from './ui';
+import { takeItDown } from './routes';
 
 // Экран «Куда можно обратиться». Дословно из объекта CONTACTS (reference/app.js).
 // Имя и мета некоторых служб берутся из подписей ui (как в прототипе: T.ui.*).
@@ -42,12 +43,12 @@ export const contacts: ContactsContent = {
       meta: ui.number,
     },
     {
-      name: { ru: 'Take It Down', tg: 'Take It Down' },
+      name: takeItDown.name,
       description: {
         ru: 'Убрать интимные фото из сети, если тебе нет 18',
         tg: 'Нест кардани аксҳои шахсии наздик аз интернет, агар ҳанӯз 18-сола набошӣ',
       },
-      link: 'https://takeitdown.ncmec.org',
+      link: takeItDown.url,
       needsInternet: true,
     },
   ],

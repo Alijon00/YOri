@@ -2,3 +2,4 @@ dist
 node_modules
 public/fonts
 public/icons
+public/model.json

@@ -7,6 +7,13 @@ export const message: Localized = {
   tg: 'Ба ман кӯмак лозим аст. Гап зада метавонем?',
 };
 
+// Сервис Take It Down: собственное имя (одинаково на обоих языках) и адрес.
+// Один источник для шага маршрута и карточки контактов, чтобы не расходились.
+export const takeItDown: { name: Localized; url: string } = {
+  name: { ru: 'Take It Down', tg: 'Take It Down' },
+  url: 'https://takeitdown.ncmec.org',
+};
+
 // Пошаговые маршруты. Перенесено дословно из объекта ROUTES (reference/app.js).
 // Коды extra прототипа: 'report' → report, 'tid' → takeItDown, 'msg' → message.
 export const routes: Route[] = [

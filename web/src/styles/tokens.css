@@ -1,33 +1,60 @@
 /*
- * Цветовые токены.
- * ВНИМАНИЕ: это временная палитра-заглушка. Папка /reference отсутствует,
- * поэтому точные цвета прототипа ещё не перенесены. Когда reference/styles.css
- * появится — заменить значения ниже на цвета оттуда.
+ * Цветовые токены. Значения перенесены ДОСЛОВНО из reference/styles.css —
+ * это эталонная палитра прототипа, свои цвета не придумываем.
  *
- * Светлая тема — :root, тёмная — через @media (prefers-color-scheme: dark).
- * Контраст текста к фону проверен на уровне не ниже 4.5:1.
+ * Светлая тема — :root. Тёмная — только через системную настройку
+ * (prefers-color-scheme), как в прототипе; плюс ручной тумблер data-theme
+ * на будущее (атрибут на <html>). Контраст основного текста к фону ≥ 4.5:1.
  */
 
 :root {
-  --color-bg: #ffffff;
-  --color-surface: #f5f3f9;
-  --color-text: #1a1726; /* на белом ≈ 15:1 */
-  --color-text-muted: #595370; /* на белом ≈ 6.4:1 */
-  --color-accent: #6a3fb5; /* на белом ≈ 6.9:1 */
-  --color-accent-contrast: #ffffff; /* текст на акценте ≈ 6.9:1 */
-  --color-border: #e4e0ec;
-  --color-focus: #6a3fb5;
+  --bg: #f3f5f1;
+  --surface: #fdfefc;
+  --line: #d5ddd8;
+  --ink: #18231f;
+  --muted: #4f5d57;
+  --accent: #0e5c55;
+  --accent-ink: #ffffff;
+  --accent-soft: #dcebe6;
+  --warm: #a8461a;
+  --warm-ink: #ffffff;
+  --warm-soft: #fbe3d6;
+  --font: 'Nunito', 'Segoe UI', Arial, sans-serif;
+  --r-lg: 20px;
+  --r-md: 16px;
+  --r-pill: 999px;
 }
 
+/* Тёмная тема по системной настройке (если не форсирована светлая). */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #141220;
-    --color-surface: #211d30;
-    --color-text: #f1eff7; /* на тёмном фоне ≈ 15:1 */
-    --color-text-muted: #b6b0c8; /* на тёмном фоне ≈ 8:1 */
-    --color-accent: #c3a9f5; /* светлый акцент для тёмной темы */
-    --color-accent-contrast: #1a1226; /* тёмный текст на светлом акценте */
-    --color-border: #332d45;
-    --color-focus: #c3a9f5;
+  :root:not([data-theme='light']) {
+    --bg: #0f1715;
+    --surface: #17221f;
+    --line: #2b3934;
+    --ink: #e8efec;
+    --muted: #a6b5af;
+    --accent: #5bbdb0;
+    --accent-ink: #0a1412;
+    --accent-soft: #1c3530;
+    --warm: #ee9a68;
+    --warm-ink: #1a0e07;
+    --warm-soft: #3a2418;
+    color-scheme: dark;
   }
+}
+
+/* Ручной тумблер тёмной темы (на будущее) — те же значения. */
+:root[data-theme='dark'] {
+  --bg: #0f1715;
+  --surface: #17221f;
+  --line: #2b3934;
+  --ink: #e8efec;
+  --muted: #a6b5af;
+  --accent: #5bbdb0;
+  --accent-ink: #0a1412;
+  --accent-soft: #1c3530;
+  --warm: #ee9a68;
+  --warm-ink: #1a0e07;
+  --warm-soft: #3a2418;
+  color-scheme: dark;
 }
